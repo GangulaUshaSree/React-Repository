@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        //createElement() will create the html element (eg: h1 tag). 
+        //In React, for createElement we have 3 arguments. First one is 'element name', second one is 'object(attritubes)'' and third one is 'innerText(message)''
+        //Here heading will give the object not html elements
+        // Means createElement() funtion will returns an object.
+        var heading = React.createElement("h1", {}, "Hello World! from React code");
+
+        //createRoot() is used to craete the root where the dom functions will work.
+        //It contains single arugument.
+        // createRoott() funtion will returns an object.
+        var root = ReactDOM.createRoot(document.getElementById("root"));
+        
+        //render() will take the created element/object and create it html format(system readable format) and show the results in root place
+        //Example: Here render is creating the h1 tag code with attritubes and text message and showing that results in root id place
+        root.render(heading);
+
+    </script>
+</body>
+</html>
