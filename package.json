@@ -1,0 +1,33 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "This a React by Usha Sree",
+  "keywords": [],
+  "homepage": "https://github.com/GangulaUshaSree/React-Repository#readme",
+  "bugs": {
+    "url": "https://github.com/GangulaUshaSree/React-Repository/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GangulaUshaSree/React-Repository.git"
+  },
+  "license": "ISC",
+  "author": "Usha Sree",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.14.0"
+  }
+}
