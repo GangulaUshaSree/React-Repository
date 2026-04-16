@@ -8,11 +8,11 @@ const User = (props) => {
     const [count2] = useState(2);
 
     useEffect(() => {
-        const timer = setInterval(() => {
+        /*const timer = setInterval(() => {
             console.log("useEffect setInterval called");
         }, 1000);
 
-        return () => clearInterval(timer);
+        return () => clearInterval(timer);*/
     }, []);
 
     return <div className = "user-card">
