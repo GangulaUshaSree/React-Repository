@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -18,6 +18,8 @@ const FoodApp = () => {
     )
 };
 
+const Grocery = lazy(() => import("./Components/Grocery"));
+
 const appRouter = createBrowserRouter([
     {
         path : "/",
@@ -34,6 +36,10 @@ const appRouter = createBrowserRouter([
             {
                 path : "/contact",
                 element : < Contact />
+            },
+            {
+                path : "/grocery",
+                element : <Suspense fallback={<h1>Loading.........</h1>}> < Grocery /> </Suspense>
             },
             {
                 path : "/restaurants/:resid",

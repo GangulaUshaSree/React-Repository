@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "./Utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -35,6 +36,12 @@ const Body = () => {
         setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
+
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false) 
+        return <h1> Looks you are Offline, Please check your Internet connection! </h1>
+
     //conditional rendering - Rendering based on the condition is called conditional rendering
     //if(listOfRestaurants.length === 0){
         //return <Shimmer />
@@ -60,7 +67,7 @@ const Body = () => {
                     const filteredList = listOfRestaurants.filter(
                         (res) => res.info.avgRating > 4
                     );
-                    setListOfRestaurants(filteredList);
+                    setFilteredRestaurants(filteredList);
                 }}> Top Rated Restaurants </button>
             </div>
 

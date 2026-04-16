@@ -28,7 +28,7 @@ class UserClass extends React.Component {
         },1000);*/
 
         //API call
-        const data = await fetch("https://api.github.com/users/UshaSree");
+        const data = await fetch("https://api.github.com/users/GangulaUshaSree");
         const json = await data.json();
 
         console.log(json);
