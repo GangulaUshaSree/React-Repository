@@ -13,7 +13,7 @@ const Header = () => {
     //if dependency is empty - [] , useEffect is called on initial render (just once)
     //if dependencey has some array value - [btnName] , useEffect is called everytime btnName is updated.
     useEffect(() => {
-        console.log("useEffect rendered");
+        //console.log("useEffect rendered");
     }, []);
 
     return (
