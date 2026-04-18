@@ -49,13 +49,13 @@ const Body = () => {
 
     //here we have used ternary operator
     return (listOfRestaurants.length === 0) ? <Shimmer /> : (
-        <div className = "body">
-            <div className = "filter">
-                <div className="search">
-                    <input type ="text" className="search-box" value={searchText} onChange={(e) => {
+        <div className = "bg-white p-2 m-2">
+            <div className = "flex">
+                <div className=" ">
+                    <input type ="text" className="m-3 p-2 bg-gray-100 border-2 border-solid border-black " value={searchText} onChange={(e) => {
                         setSearchText(e.target.value);
                     }} />
-                    <button onClick={() => {
+                    <button className="m-3 p-2 border-2 border-solid border-black bg-gray-100 rounded-lg" onClick={() => {
                         const filteredRestaurantData = listOfRestaurants.filter(
                             (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
                         );
@@ -63,7 +63,7 @@ const Body = () => {
                         }
                     }>Search</button>
                 </div>
-                <button className="filter-btn" onClick={() => {
+                <button className="m-3 p-2 border-2 border-solid border-black bg-gray-100 rounded-lg" onClick={() => {
                     const filteredList = listOfRestaurants.filter(
                         (res) => res.info.avgRating > 4
                     );
@@ -71,7 +71,7 @@ const Body = () => {
                 }}> Top Rated Restaurants </button>
             </div>
 
-            <div className="res-container"> 
+            <div className="flex flex-wrap bg-white py-[30px] px-[90px]"> 
                 {/*
                 <RestaurantCard resData ={resList[0]} /> 
                 <RestaurantCard resData ={resList[1]} /> 

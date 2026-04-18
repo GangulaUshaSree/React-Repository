@@ -20,36 +20,38 @@ const Header = () => {
     }, []);
 
     return (
-       <div className="header-container">
-            <div className="logo-container">
-                <img className = 'logo' src = {LOGO_URL} />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>
-                        Online Status: {onlineStatus === true ? "🟢" : "🔴"}
-                    </li>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About Us</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact Us</Link>
-                    </li>
-                    <li>
-                        <Link to="/grocery">Grocery</Link>
-                    </li>
-                    <li>Cart</li>
-                    <button className="login" onClick = {
-                        () => {
-                            (btnName === "Login") ? setBtnName("Logout") : setBtnName("Login");
-                        }
-                    }> {btnName} </button>
-                </ul>
-            </div>
-        </div> 
+        <div className="shadow-md bg-white">
+            <div className="flex max-w-[1200px] min-w-[1200px] mx-auto h-24 items-center justify-between bg-white ">
+                <div className="logo-container ">
+                    <img className = 'w-20 items-center' src = {LOGO_URL} />
+                </div>
+                <div className="flex">
+                    <ul className = "flex p-4 items-center ">
+                        <li className="m-2 p-2 font-bold">
+                            Online Status: {onlineStatus === true ? "🟢" : "🔴"}
+                        </li>
+                        <li className="m-2 p-2 font-bold">
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li className="m-2 p-2 font-bold">
+                            <Link to="/about">About Us</Link>
+                        </li>
+                        <li className="m-2 p-2 font-bold">
+                            <Link to="/contact">Contact Us</Link>
+                        </li>
+                        <li className="m-2 p-2 font-bold">
+                            <Link to="/grocery">Grocery</Link>
+                        </li>
+                        <li className="m-2 p-2 font-bold">Cart</li>
+                        <button className="m-2 p-2 font-bold" onClick = {
+                            () => {
+                                (btnName === "Login") ? setBtnName("Logout") : setBtnName("Login");
+                            }
+                        }> {btnName} </button>
+                    </ul>
+                </div>
+            </div> 
+        </div>
     )
 };
 

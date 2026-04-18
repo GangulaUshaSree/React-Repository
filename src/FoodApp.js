@@ -11,7 +11,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const FoodApp = () => {
     return (
-        <div className = "app">
+        <div className = "">
             <Header/>
             <Outlet/>
         </div>
