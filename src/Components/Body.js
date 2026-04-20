@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { isRestaurantOpen } from "./RestaurantCard";
 //import resList from "./Utils/mockData"; 
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -41,6 +41,8 @@ const Body = () => {
 
     if(onlineStatus === false) 
         return <h1> Looks you are Offline, Please check your Internet connection! </h1>
+
+    const RestaurantOpen = isRestaurantOpen(RestaurantCard);
 
     //conditional rendering - Rendering based on the condition is called conditional rendering
     //if(listOfRestaurants.length === 0){
@@ -85,7 +87,11 @@ const Body = () => {
                 */}
                 
                 {filteredRestaurants.map((restaurant) => (
-                    <Link key={restaurant.info.id} to = {"/restaurants/" + restaurant.info.id} state={restaurant.info.name}> <RestaurantCard resData = {restaurant}/> </Link>
+                    <Link key={restaurant.info.id} to = {"/restaurants/" + restaurant.info.id} state={restaurant.info.name}> 
+                    {
+                        restaurant.info.isOpen ? <RestaurantOpen resData = {restaurant}/> : <RestaurantCard resData = {restaurant}/>
+                    }
+                    </Link>
                 ))}
             </div>
         </div>
