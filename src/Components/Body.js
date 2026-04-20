@@ -1,9 +1,10 @@
 import RestaurantCard, { isRestaurantOpen } from "./RestaurantCard";
 //import resList from "./Utils/mockData"; 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./Utils/useOnlineStatus";
+import UserContext from "./Utils/UserContext";
 
 const Body = () => {
 
@@ -23,6 +24,8 @@ const Body = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     const fetchData = async () => {
 
@@ -71,6 +74,11 @@ const Body = () => {
                     );
                     setFilteredRestaurants(filteredList);
                 }}> Top Rated Restaurants </button>
+                <div>
+                    <label> UserName: </label>
+                    <input type ="text" className="m-3 p-2 bg-gray-100 border-2 border-solid border-black " value={loggedInUser} 
+                    onChange={(e) => {setUserName(e.target.value)}} />
+                </div>
             </div>
 
             <div className="flex flex-wrap bg-white py-[30px] px-[90px]"> 

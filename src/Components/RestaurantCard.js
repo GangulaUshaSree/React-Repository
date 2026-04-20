@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { CDN_URL } from "./Utils/constants";
+import UserContext from "./Utils/UserContext";
 
 const RestaurantCard = (props) => {
     const {resData} = props;
+
+    const {loggedInUser} = useContext(UserContext);
 
     // const data = resData.info; 
     // or
@@ -26,6 +30,7 @@ const RestaurantCard = (props) => {
             <h4>{avgRating}</h4>
             <h4>{sla.slaString}</h4>
             <h4>{cuisines.join(", ")}</h4>
+            <h4>UserName: {loggedInUser}</h4>
         </div>
     );
 };
