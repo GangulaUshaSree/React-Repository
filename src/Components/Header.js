@@ -16,7 +16,7 @@ const Header = () => {
 
     //Subscribing to the store using a Selector
     const cartItems = useSelector((store) => store.cart.items);
-    console.log(cartItems);
+    //console.log(cartItems);
 
     //Note:**
     //useEffect has 2 arguments - function/setup and dependency (optional)
